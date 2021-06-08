@@ -1,0 +1,27 @@
+{
+  "name": "testsubpackage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "_uview-ui@1.8.4@uview-ui": "^1.8.4",
+    "uview-ui": "^1.8.4"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YB9527/uniapptest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YB9527/uniapptest/issues"
+  },
+  "homepage": "https://github.com/YB9527/uniapptest#readme"
+}

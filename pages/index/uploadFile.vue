@@ -12,8 +12,7 @@
 </template>
 
 <script>
-	import zjdsqRequest from '@/pages/works/zjdsq/js/zjdsqRequest.js'
-	import config from 'static/js/config.js';
+
 	
 	export default{
 		props:{

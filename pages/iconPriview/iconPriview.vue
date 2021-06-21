@@ -11,11 +11,13 @@
 			   <text :selectable="true" :user-select="true">{{item}}</text>
 			</view>
 		</view>
+		   <button open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">getPhoneNumber</button> 
 	</view>
 </template>
 
 <script>
-	
+	 //在需要解密的页面引用该文件
+	  import WXBizDataCrypt from "@/common/WXBizDataCrypt.js";
 	export default {
 		data() {
 			return {
@@ -26,6 +28,41 @@
 		
 		},
 		methods: {
+			
+			 getPhoneNumber(e) {
+				 console.log(e);
+			   if (!e.target.iv) {
+			     uni.showModal({
+			       content: '获取手机号失败！',
+			       showCancel: false
+			     })
+			     return;
+			   }
+			   uni.checkSession({
+			     success: _ => {
+			       bindMobileApi({
+			         ivdata: e.target.iv,
+			         encrypdata: e.target.encryptedData,
+			       }).then(res => {
+			         this.$emit('callback',true);
+			         store.dispatch('getInfo', false)
+			         uni.showModal({
+			           content: '登录成功',
+			           showCancel: false
+			         })
+			       }).catch(err => {
+			         store.dispatch('getInfo', false)
+			       })
+			     },
+			     fail: res => {
+			       store.dispatch('getInfo', false)
+			       uni.showModal({
+			         content: '获取手机号失败，请再次尝试!',
+			         showCancel: false
+			       })
+			     }
+			   })
+			 },
 			copy(value){
 				console.log(value);
 				/* #ifndef H5 */		

@@ -83,7 +83,7 @@
 <style lang="scss">
 	.tx{
 		width: 100rpx;
-		background-color: $u-main-color;
+		
 	}
 	
 	

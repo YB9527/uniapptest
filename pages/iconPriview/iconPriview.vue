@@ -1,8 +1,6 @@
 <template>
 	<view>
-			<view class="wxicon"> 
-				 <text class="cuIcon-edit" ></text>
-			</view>
+		
 	
 		<button type="primary" @click="readIconInCss">读取图标文件</button>
 		<view class="iconcontent">
@@ -11,13 +9,13 @@
 			   <text :selectable="true" :user-select="true">{{item}}</text>
 			</view>
 		</view>
-		   <button open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">getPhoneNumber</button> 
+		 
 	</view>
 </template>
 
 <script>
 	 //在需要解密的页面引用该文件
-	  import WXBizDataCrypt from "@/common/WXBizDataCrypt.js";
+
 	export default {
 		data() {
 			return {
